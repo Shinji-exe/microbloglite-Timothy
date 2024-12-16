@@ -106,6 +106,19 @@
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
+     animation: changeBackground 8s 2s infinite ease-in-out;
+    }
+
+    @keyframes changeBackground {
+      0%{
+        background-image: url("/images/selfie-of-a-group-of-people.jpg");
+      }33%{
+        background-image: url("/images/social.webp");
+      }66%{
+        background-image: url("/images/istockphoto-1307030599-612x612.jpg");
+      }100%{
+        background-image: url("/images/selfie-of-a-group-of-people.jpg");
+      }
     }
   
     #column1{

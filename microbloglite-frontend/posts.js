@@ -4,6 +4,23 @@
 
 let postCardArea = document.getElementById("postCardArea");
 
+//
+
+// function postBox() {
+//   let tweetInput = document.getElementById("tweetInput").value.trim;
+//   let tweetButton = document.getElementById("tweetButton");
+
+//   if (tweetInput.length > 0 && tweetInput.length <= 250) {
+//     const tweetCard = document.createElement("div");
+
+//     tweetButton.disabled = false;
+//   } else {
+//     tweetButton.disabled = true;
+//   }
+// }
+
+// postBox();
+
 async function getAllPost() {
   const loginData = getLoginData();
   try {
@@ -68,16 +85,16 @@ async function createAPost() {
 function createPostCards(posts) {
   posts.forEach((post) => {
     let card = document.createElement("div");
-    card.className = "card my-3";
+    card.className = "card my-3 w-75";
 
     let cardHeader = document.createElement("div");
     cardHeader.className = "card-header";
     card.appendChild(cardHeader);
 
-    let cardHeaderProfileName = document.createElement("a")
-    cardHeaderProfileName.href = `userProfile.html?id=${post._id}`
-    cardHeaderProfileName.innerText =  post.username
-    cardHeader.appendChild(cardHeaderProfileName)
+    let cardHeaderProfileName = document.createElement("a");
+    cardHeaderProfileName.href = `postDetail.html?id=${post._id}`;
+    cardHeaderProfileName.innerText = post.username;
+    cardHeader.appendChild(cardHeaderProfileName);
 
     let imagePost = document.createElement("img");
     imagePost.src = post.imagePost;
@@ -89,14 +106,12 @@ function createPostCards(posts) {
     cardBody.appendChild(cardText);
     card.appendChild(cardBody);
 
-    let likeButton = document.createElement("button")
-    likeButton.innerText = "Like"
-    likeButton.addEventListener("click", async ()=> {
-        
-    })
+    let likeButton = document.createElement("button");
+    likeButton.innerText = "Like";
+    likeButton.addEventListener("click", async () => {});
 
     let cardFooter = document.createElement("div");
-    cardFooter.className = "card-footer"
+    cardFooter.className = "card-footer";
     let cardFooterText = document.createElement("p");
     cardFooterText.innerText = new Date(post.createdAt);
     cardFooter.appendChild(cardFooterText);
@@ -118,3 +133,4 @@ async function filterPost(params) {
     console.error;
   }
 }
+
