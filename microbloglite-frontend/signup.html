@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="Lux.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="landing.css" />
+    <script defer src="./landing.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="py-3 border-bottom w-100 bg-light">
+      <!-- <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1> -->
+      <nav class="d-flex justify-content-between align-content-center container-fluid">
+        <a href="index.html">
+          <img src="./images/logoipsum-212.svg" alt="" />
+        </a>
+        <ul class="nav nav-underline align-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="signin.html">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="posts.html">Create Post</a>
+          </li>
+          <li class="nav-item">
+            <!-- <button id="themeChanger">Light</button> -->
+            <button class="btn btn-primary rounded-2" id="themeChanger">Light</button>
+          </li>
+        </ul>
+        <!-- <button id="themeChanger">Light</button> -->
+      </nav>
+    </header>
+
+    <div class="container-fluid d-flex justify-content-between min-vh-100">
+      <div class="w-100 d-flex justify-content-center align-items-center border-5">
+        <form class="border border-primary-subtle p-4 rounded-5" id="forms" onsubmit="makeProfile(event)">
+          <div class="text-center">
+            <img src="./images/logoipsum-212.svg" class="mb-2" alt="" />
+          </div>
+          <div class="form-group mb-3">
+            <h2 class="text-center">Create an Account</h2>
+            <label for="username">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="fullName"
+              aria-describedby="fullname"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+          <div class="form-group mb-3">
+            <!-- <h2 class="text-center">Create an Account</h2> -->
+            <label for="username">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="usernameField"
+              aria-describedby="username"
+              placeholder="Username"
+              required
+            />
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="Email Address">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailField"
+              aria-describedby="Email"
+              placeholder=" Email"
+              required
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="Password1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="passwordField"
+              placeholder="Password"
+              minlength="8"
+              maxlength="20"
+              required
+            />
+            <!-- <i class="bi bi-eye-slash align p-2 mt-2" id="hide-show" onclick="togglePassword()">Show Password</i> -->
+            <button class="btn" onclick="togglePassword()">
+              <i id="passwordLabel" class="bi bi-eye-slash align p-2 mt-2 hide-show1">Show Password</i>
+            </button>
+            <!-- <p id="passwordLabel" style="display: inline;">Show Password</p> -->
+            <small id="password1" class="text-muted"> Must be 8-20 characters long. </small>
+          </div>
+          <!-- <div class="form-group mb-3">
+            <label for="Password2">Re-enter Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="passwordField2"
+              placeholder="Password"
+              minlength="8"
+              maxlength="20"
+              required
+            />
+            <button class="btn" onclick="togglePassword()">
+              <i id="passwordLabel" class="bi bi-eye-slash align p-2 mt-2 hide-show1">Show Password</i>
+              <p id="passwordLabel" style="display: inline;">Show Password</p>
+            </button>
+            <i class="bi bi-eye-slash align p-2 mt-2 hide-show1" onclick="togglePassword()">Show Password</i>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <small id="password2" class="text-muted"> Must be 8-20 characters long. </small>
+
+            <div>
+              <input class="" type="file" name="" id="imageProfile" />
+            </div>
+          </div> -->
+
+          <div>
+            <input class="" type="file" name="" id="imageProfile" />
+          </div>
+          <hr />
+
+          <label for="bio">Bio</label>
+          <textarea name="" id="bio" placeholder="Tell us about yourself!"></textarea>
+
+          <button type="submit" id="signinButton" class="btn btn-primary rounded-5 mt-2 w-100">Sign Up</button>
+          <hr class="" />
+
+          <div class="d-flex justify-content-center buttonFlip gap-2">
+            <div class="">
+              <button type="submit" class="btn btn-primary rounded-5 w-100">
+                <i class="bi bi-google pe-1"></i>
+                Sign up with Google
+              </button>
+            </div>
+
+            <div class="">
+              <button type="submit" class="btn btn-danger rounded-5 w-100">
+                <i class="bi bi-apple pe-1"></i>
+                Sign up with Apple ID
+              </button>
+            </div>
+          </div>
+
+          <div class="my-2 text-center">
+            <small>Have an account with us? <a href="index.html">Sign In</a></small>
+          </div>
+        </form>
+      </div>
+
+      <div id="imagePlacement2" class="w-100"></div>
+    </div>
+  </body>
+</html>
