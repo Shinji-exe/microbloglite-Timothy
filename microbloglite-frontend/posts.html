@@ -13,6 +13,13 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+      integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -39,7 +46,7 @@
       <h1>POSTS PAGE</h1>
     </header> -->
 
-    <!-- <header class="container-fluid d-flex justify-content-between bg-dark text-light py-4" data-bs-theme="dark">
+    <header class="container-fluid d-flex justify-content-between bg-dark text-light py-4" data-bs-theme="dark">
       <svg
         id="logo-16"
         class=""
@@ -71,65 +78,35 @@
         ></path>
       </svg>
 
-      <div>Account</div>
-    </header> -->
+      <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark ticky-top bg-body-tertiary" data-bs-theme="dark">
+      <div class="container">
+          <a class="navbar-brand fw-light" href="/"><span class="fas fa-brain me-1"> </span>Ideas</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/register">Register</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/profile">Profile</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    </header> 
+
+    <!-- <header></header> -->
 
     <main class="container-fluid d-flex gap-4 min-vh-100">
-      <nav class="w-50 bg-dark-subtle px-5">
-        <svg
-          id="logo-16"
-          class="my-4"
-          width="109"
-          height="43"
-          viewBox="0 0 109 43"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M64.9315 11.4284C62.1883 8.6852 58.9316 6.5091 55.3475 5.0245C51.7633 3.5399 47.9219 2.7758 44.0424 2.7758C40.1629 2.7758 36.3215 3.5399 32.7373 5.0245C29.1532 6.5091 25.8965 8.6852 23.1533 11.4284L44.0424 32.3174L64.9315 11.4284Z"
-            class="ccompli1"
-            fill="#FFD200"
-          ></path>
-          <path
-            d="M44.0686 32.3475C46.8118 35.0907 50.0684 37.2667 53.6526 38.7513C57.2367 40.2359 61.0782 41 64.9577 41C68.837 41 72.679 40.2359 76.263 38.7513C79.847 37.2667 83.104 35.0907 85.847 32.3475L64.9577 11.4584L44.0686 32.3475Z"
-            class="ccompli2"
-            fill="#06E07F"
-          ></path>
-          <path
-            d="M44.017 32.3429C41.2738 35.0861 38.0171 37.2621 34.433 38.7467C30.8488 40.2313 27.0074 40.9954 23.1279 40.9954C19.2484 40.9954 15.407 40.2313 11.8228 38.7467C8.2387 37.2621 4.982 35.0861 2.2388 32.3429L23.1279 11.4538L44.017 32.3429Z"
-            class="ccustom"
-            fill="#E3073C"
-          ></path>
-          <path
-            d="M64.9831 11.433C67.726 8.6898 70.983 6.5138 74.567 5.0292C78.151 3.5446 81.993 2.7805 85.872 2.7805C89.752 2.7805 93.593 3.5446 97.177 5.0292C100.761 6.5138 104.018 8.6898 106.761 11.433L85.872 32.3221L64.9831 11.433Z"
-            class="ccustom"
-            fill="#1F84EF"
-          ></path>
-        </svg>
 
-        <ul class="nav nav-underline flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="">link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">link</a>
-          </li>
-          <li class="nav-item">
-            <button>
-              <a class="nav-link" href="" onclick="logout()">log Out</a>
-            </button>
-          </li>
-        </ul>
-      </nav>
+    
 
       <!-- <section class="tweet-box column2 w-50">
         <textarea name="" id="tweetInput" placeholder="What's Happening?" maxlength="250"></textarea>
@@ -140,8 +117,19 @@
       </section> -->
 
       <section id="postCardArea" class="container mt-3">
-        <section class="tweet-box column2 w-50" onclick="createAPost()">
+        <section class="tweet-box column2 w-100" onclick="createAPost()">
           <textarea name="" id="tweetInput" placeholder="What's Happening?" maxlength="250"></textarea>
+          <div class="image-upload">
+            <label for="fileIcon">
+              <i id="imageIcon" class="bi bi-card-image text-primary fs-3"></i>
+            </label>
+            <i id="emojis" class="bi bi-emoji-smile-fill text-primary ps-2 fs-3"></i>
+            <i id="poll" class="bi bi-bar-chart-line-fill text-primary ps-2 fs-3"></i>
+            <i id="gif" class="bi bi-filetype-gif text-primary ps-2 fs-3"></i>
+          </div>
+
+          <input type="file" name="" id="fileIcon" />
+
           <div class="tweet-controls">
             <span id="charCount">250</span>
             <button id="tweetButton">Post</button>
@@ -149,10 +137,55 @@
         </section>
       </section>
 
-      <section class="w-50 bg-danger">
-        <h1>Trending for You</h1>
-        <input type="search" name="" id="" />
-      </section>
+      <div class="col-3 mt-3">
+        <div class="card">
+            <div class="card-header pb-0 border-0">
+                <h5 class="">Search</h5>
+            </div>
+            <div class="card-body">
+                <input placeholder="...
+                " class="form-control w-100" type="text"
+                    id="search">
+                <button class="btn btn-dark mt-2"> Search</button>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header pb-0 border-0">
+                <h5 class="">Who to follow</h5>
+            </div>
+            <div class="card-body">
+                <div class="hstack gap-2 mb-3">
+                    <div class="avatar">
+                        <a href="#!"><img class="avatar-img rounded-circle"
+                                src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt=""></a>
+                    </div>
+                    <div class="overflow-hidden">
+                        <a class="h6 mb-0" href="#!">Mario Brother</a>
+                        <p class="mb-0 small text-truncate">@Mario</p>
+                    </div>
+                    <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
+                            class="fa-solid fa-plus"> </i></a>
+                </div>
+                <div class="hstack gap-2 mb-3">
+                    <div class="avatar">
+                        <a href="#!"><img class="avatar-img rounded-circle"
+                                src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt=""></a>
+                    </div>
+                    <div class="overflow-hidden">
+                        <a class="h6 mb-0" href="#!">Alex Webb</a>
+                        <p class="mb-0 small text-truncate">@TASM</p>
+                    </div>
+                    <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
+                            class="fa-solid fa-plus"> </i></a>
+                </div>
+                <div class="d-grid mt-3">
+                    <a class="btn btn-sm btn-primary-soft" href="#!">Show More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
     </main>
 
     <footer></footer>
