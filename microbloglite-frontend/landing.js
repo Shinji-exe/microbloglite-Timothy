@@ -3,10 +3,12 @@
 "use strict";
 
 const loginForm = document.querySelector("#login");
+
 const forms = document.getElementById("forms");
-const fullName = document.getElementById("fullName")
-const usernameField = document.getElementById("usernameField")
-const emailField = document.getElementById("emailField")
+const fullName = document.getElementById("fullName");
+const usernameField = document.getElementById("usernameField");
+const emailField = document.getElementById("emailField");
+const imageFile = document.getElementById("imageProfile");
 
 loginForm.onsubmit = function (event) {
   // Prevent the form from refreshing the page,
@@ -36,6 +38,17 @@ async function makeProfile(event) {
     password: forms.passwordField.value.trim(),
     bio: forms.bio.value.trim(),
   };
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  if (password.length < 8) {
+    alert("Password must be at least 8 characters long.");
+    return;
+  }
 
   try {
     let promise = fetch("http://localhost:5005/api/users", {

@@ -39,6 +39,8 @@
     <script>
       // If the user is NOT logged in, redirect back to the landing page (index.html)
       if (isLoggedIn() === false) window.location.replace("/");
+
+     
     </script>
   </head>
   <body>
@@ -46,8 +48,12 @@
       <h1>POSTS PAGE</h1>
     </header> -->
 
-    <header class="container-fluid d-flex justify-content-between bg-dark text-light py-4" data-bs-theme="dark">
-      <svg
+    <header class="container-fluid d-flex justify-content-between bg-body-tertiary text-light py-4 border">
+      <div class="logo">
+        <svg id="logo-57" width="80" height="80" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="stroke" d="M36.95 4.31006H13.05L1.09998 25.0001L13.05 45.6901H36.95L48.9 25.0001L36.95 4.31006Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M36.99 6.15991H15.23L4.34998 24.9999L15.23 43.8399H36.99L47.87 24.9999L36.99 6.15991Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.03 8.01001H17.41L7.59998 25L17.41 41.99H37.03L46.84 25L37.03 8.01001Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.07 9.86011H19.59L10.85 25.0001L19.59 40.1401H37.07L45.81 25.0001L37.07 9.86011Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.12 11.71H21.77L14.1 25L21.77 38.29H37.12L44.79 25L37.12 11.71Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.16 13.5601H23.95L17.35 25.0001L23.95 36.4401H37.16L43.76 25.0001L37.16 13.5601Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.2 15.4199H26.13L20.6 24.9999L26.13 34.5799H37.2L42.73 24.9999L37.2 15.4199Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.24 17.27H28.31L23.85 25L28.31 32.73H37.24L41.7 25L37.24 17.27Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.28 19.1201H30.49L27.1 25.0001L30.49 30.8801H37.28L40.68 25.0001L37.28 19.1201Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.33 20.97H32.67L30.35 25L32.67 29.03H37.33L39.65 25L37.33 20.97Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path></svg>
+      <span class="logo__text">Logo Ipsum</span>
+      </div>
+      <!-- <svg
         id="logo-16"
         class=""
         width="109"
@@ -76,26 +82,29 @@
           class="ccustom"
           fill="#1F84EF"
         ></path>
-      </svg>
+      </svg> -->
 
-      <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark ticky-top bg-body-tertiary" data-bs-theme="dark">
+      <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark ticky-top bg-body-tertiary rounded-5" data-bs-theme="dark">
       <div class="container">
-          <a class="navbar-brand fw-light" href="/"><span class="fas fa-brain me-1"> </span>Ideas</a>
+          <!-- <a class="navbar-brand fw-light" href="/"><span class="fas fa-brain me-1"> </span>Ideas</a> -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
               <ul class="navbar-nav">
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="/login">Login</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="/register">Register</a>
+                  </li> -->
+                  <li class="nav-item">
+                      <a id="profileTitle" class="nav-link" href="#" >Profile</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="/profile">Profile</a>
-                  </li>
+                    <button class="btn btn-danger rounded-5" onclick="logout()">Logout</button>
+                </li>
               </ul>
           </div>
       </div>
@@ -116,19 +125,88 @@
         </div>
       </section> -->
 
+      <div class="col-3 mt-3">
+        <div class="card mt-3">
+            <div class="card-header pb-0 border-0">
+                <h5 class="">Trends for You</h5>
+            </div>
+            <div class="card-body">
+                <div class="hstack gap-2 mb-3">
+                    <div class="avatar">
+                        <a href="#!"><img class="avatar-img rounded-circle"
+                                src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt=""></a>
+                    </div>
+                    <div class="overflow-hidden card">
+                      <div>
+                        <span class="text-light-emphasis ps-2">Gaming</span>
+                      </div>
+                      
+                      <img class="trendImage" src="./images/fe68ae6ca383d88c9ae6cb174299cbea61ded8ecc48d5d45.avif" alt="">
+                        <a class="h6 mb-0 ps-2" href="#!">Onimusha: Way of the Sword</a>
+                        <p class="mb-0 small text-truncate ps-2">@Capcom USA</p>
+                    </div>
+                    <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
+                            class="fa-solid fa-plus"> </i></a>
+                </div>
+                <div class="hstack gap-2 mb-3">
+                    <div class="avatar">
+                        <a href="#!"><img class="avatar-img rounded-circle"
+                                src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt=""></a>
+                    </div>
+                    <div class="overflow-hidden card">
+                      <div>
+                        <span class="text-light-emphasis ps-2">Tech</span>
+                      </div>
+                      <img class="trendImage" src="./images/nvidia-geforce-rtx-4090-gpu.png" alt="">
+                        <a class="h6 mb-0 ps-2" href="#!">Onimusha: Way of the Sword</a>
+                        <p class="mb-0 small text-truncate ps-2">@Capcom USA</p>
+                    </div>
+                    <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
+                            class="fa-solid fa-plus"> </i></a>
+                </div>
+                
+                <div class="hstack gap-2 mb-3">
+                  <div class="avatar">
+                      <a href="#!"><img class="avatar-img rounded-circle"
+                              src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt=""></a>
+                  </div>
+                  <div class="overflow-hidden card">
+                    <div>
+                      <span class="text-light-emphasis ps-2">Space</span>
+                    </div>
+                    <img class="trendImage" src="./images/c-ap24338650165308.jpg" alt="">
+                      <a class="h6 mb-0 ps-2" href="#!">Onimusha: Way of the Sword</a>
+                      <p class="mb-0 small text-truncate ps-2">@Capcom USA</p>
+                  </div>
+                  <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
+                          class="fa-solid fa-plus"> </i></a>
+              </div>
+                    <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
+                            class="fa-solid fa-plus"> </i></a>
+                            
+                </div>
+                
+                <div class="d-grid mt-3">
+                    <a class="btn btn-sm btn-primary-soft" href="#!">Show More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
       <section id="postCardArea" class="container mt-3">
         <section class="tweet-box column2 w-100" onclick="createAPost()">
-          <textarea name="" id="tweetInput" placeholder="What's Happening?" maxlength="250"></textarea>
+          <textarea id="tweetInput" placeholder="What's Happening?" maxlength="250"></textarea>
           <div class="image-upload">
             <label for="fileIcon">
-              <i id="imageIcon" class="bi bi-card-image text-primary fs-3"></i>
+              <i id="imageIcon" class="bi bi-card-image text-dark fs-3"></i>
             </label>
-            <i id="emojis" class="bi bi-emoji-smile-fill text-primary ps-2 fs-3"></i>
-            <i id="poll" class="bi bi-bar-chart-line-fill text-primary ps-2 fs-3"></i>
-            <i id="gif" class="bi bi-filetype-gif text-primary ps-2 fs-3"></i>
+            <i id="emojis" class="bi bi-emoji-smile-fill text-dark ps-2 fs-3"></i>
+            <i id="poll" class="bi bi-bar-chart-line-fill text-dark ps-2 fs-3"></i>
+            <i id="gif" class="bi bi-filetype-gif text-dark ps-2 fs-3"></i>
           </div>
 
-          <input type="file" name="" id="fileIcon" />
+          <input type="file" id="fileIcon" />
 
           <div class="tweet-controls">
             <span id="charCount">250</span>
@@ -141,11 +219,14 @@
         <div class="card">
             <div class="card-header pb-0 border-0">
                 <h5 class="">Search</h5>
+                <!-- <button>
+
+                </button> -->
             </div>
+            <div>
             <div class="card-body">
                 <input placeholder="...
-                " class="form-control w-100" type="text"
-                    id="search">
+                " class="form-control w-100" type="text" id="search">
                 <button class="btn btn-dark mt-2"> Search</button>
             </div>
         </div>
@@ -178,6 +259,7 @@
                     <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
                             class="fa-solid fa-plus"> </i></a>
                 </div>
+                
                 <div class="d-grid mt-3">
                     <a class="btn btn-sm btn-primary-soft" href="#!">Show More</a>
                 </div>
@@ -185,6 +267,8 @@
         </div>
     </div>
 </div>
+
+
 </div>
     </main>
 

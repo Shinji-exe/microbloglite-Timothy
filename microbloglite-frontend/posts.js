@@ -10,6 +10,15 @@ let theUsername = document.getElementById("theUsername");
 
 //
 
+let profileTitle = document.getElementById("profileTitle");
+// let profileName = localStorage.getItem("username");
+let loginData = getLoginData();
+if (loginData) {
+  profileTitle.innerText = `${loginData.username}`;
+} else {
+  profileTitle.innerText = "Guest";
+}
+
 function randomPlaceholders() {
   let placeholders = [
     "What's on your mind?",
@@ -21,7 +30,7 @@ function randomPlaceholders() {
     "Say something...",
     "The world is waiting...",
   ];
-  let randomize = placeholders[Math.floor(Math.random() * placeholders.length - 1)];
+  let randomize = placeholders[Math.floor(Math.random() * placeholders.length)];
   let selectedPlaceholder = document.createElement("p");
   selectedPlaceholder = randomize;
   tweetInput.placeholder = selectedPlaceholder;
@@ -130,6 +139,7 @@ async function createAPost() {
     let response = await promise;
     let data = await response.json();
     console.log(data);
+    // location.reload(true)
   } catch (error) {
     console.error;
   }
@@ -189,18 +199,30 @@ function createPostCards(posts) {
     feedHeader.className = "feed__header";
 
     let postStructure = document.createElement("div");
-    postStructure.className = "post card";
+    postStructure.className = "post card my-3 border";
+
+    let usernameAndPic = document.createElement("div");
+    usernameAndPic.className = "d-flex align-items-center";
 
     let postAvatar = document.createElement("div");
     postAvatar.className = "post__avatar";
+
     let postImageProfile = document.createElement("img");
-    postImageProfile.src = `${post.imageProfile}` ? `${post.imageProfile}` : "";
+    postImageProfile.src = post.imageProfile ? post.imageProfile : "images/l60Hf.png";
     postAvatar.appendChild(postImageProfile);
 
     let userNameLink = document.createElement("a");
     userNameLink.href = `userProfile.html?username=${post.username}`;
     userNameLink.className = "post__username";
     userNameLink.innerText = post.username ? post.username : "Unknown User/Variant";
+
+    let timeOfCreation = document.createElement("span");
+    timeOfCreation.className = "ps-3";
+    timeOfCreation.innerText = new Date(post.createdAt).toLocaleString();
+
+    usernameAndPic.appendChild(postAvatar);
+    usernameAndPic.appendChild(userNameLink);
+    usernameAndPic.appendChild(timeOfCreation);
 
     let postBody = document.createElement("div");
     postBody.className = "post__body";
@@ -212,27 +234,94 @@ function createPostCards(posts) {
 
     let text = document.createElement("a");
     text.innerText = `${post.text}`;
-    text.style.color = "black"
-    text.style.textDecoration = "none"
-    text.href = `postDetail.html?_id=${post._id}`
+    text.style.color = "black";
+    text.style.textDecoration = "none";
+    text.href = `postDetail.html?_id=${post._id}`;
 
     let headerSpecial = document.createElement("span");
     headerSpecial.className = "post__headerSpecial";
 
-    // let materialIcon = document.createElement("span")
+    let options = document.createElement("div");
+    options.className = "container mt-3 d-flex justify-content-around";
+
+    let likeButton = document.createElement("button");
+    likeButton.innerHTML = '<i class="bi bi-hand-thumbs-up"></i>';
+    likeButton.className = "icons ms-3 btn";
+    likeButton.addEventListener("click", async () => {
+      const loginData = getLoginData();
+      let like = {
+        postId: `${post._id}`,
+      };
+      try {
+        let promise = fetch(`http://localhost:5005/api/likes`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${loginData.token}`,
+          },
+          body: JSON.stringify(like),
+        });
+        let response = await promise;
+        let data = await response.json();
+        console.log(data);
+        location.reload(true)
+      } catch (error) {
+        console.error;
+      }
+      // let promise = fetch("http://localhost:5005/api/likes" + post._id);
+    });
+
+    let likeCounter = document.createElement("span");
+    likeCounter.innerText = post.likes.length;
+    likeCounter.className = "ps-2";
+
+    likeButton.appendChild(likeCounter);
+
+    let comment = document.createElement("button");
+    comment.innerHTML = `<i class="bi bi-chat"></i>`;
+    comment.className = "btn";
+
+    let commentCounter = document.createElement("span");
+    commentCounter.innerText = "0";
+    commentCounter.className = "ps-2";
+
+    comment.appendChild(commentCounter);
+
+    let retweet = document.createElement("button");
+    retweet.innerHTML = `<i class="bi bi-arrow-repeat"></i>`;
+    retweet.className = "btn";
+
+    let retweetCounter = document.createElement("span");
+    retweetCounter.innerText = "0";
+    retweetCounter.className = "ps-2";
+
+    retweet.appendChild(retweetCounter);
+
+    let upload = document.createElement("button");
+    upload.innerHTML = `<i class="bi bi-upload"></i>`;
+    upload.className = "btn";
+
+    let horizzontal = document.createElement("hr");
+
+    options.appendChild(likeButton);
+    options.appendChild(comment);
+    options.appendChild(retweet);
+    options.appendChild(upload);
 
     let headerDescription = document.createElement("div");
     headerDescription.className = "post__headerDescription";
 
-    let editPost = document.createElement("button")
-    editPost.addEventListener("click", ()=>{
-      location.href = `editPost.html?_id=${post._id}`
-    })
+    let editPost = document.createElement("button");
+    editPost.innerText = "Edit";
+    editPost.className = "btn btn-dark me-2 rounded-5";
+    editPost.addEventListener("click", () => {
+      location.href = `editPost.html?_id=${post._id}`;
+    });
 
     // if (post?.username === user?.username) {
     let deleteButton = document.createElement("button");
     deleteButton.innerText = `Delete`;
-    deleteButton.className = "btn btn-primary rounded-5"
+    deleteButton.className = "btn btn-dark rounded-5";
 
     deleteButton.addEventListener("click", async () => {
       if (post._id) {
@@ -269,11 +358,13 @@ function createPostCards(posts) {
     postHeader.appendChild(headerSpecial);
     postBody.appendChild(postHeader);
     postBody.appendChild(headerDescription);
+    postBody.appendChild(editPost);
     postBody.appendChild(deleteButton);
-    postStructure.appendChild(postAvatar);
-    postStructure.appendChild(userNameLink);
+    // postStructure.appendChild(postAvatar);
+    // postStructure.appendChild(userNameLink);
+    postStructure.appendChild(usernameAndPic);
     postStructure.appendChild(postBody);
-
+    postStructure.appendChild(options);
     postCardArea.appendChild(postStructure);
   });
 }
