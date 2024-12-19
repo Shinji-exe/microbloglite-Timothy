@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="posts.css" />
 
     <title>/POSTS</title>
+    <script defer src="./userProfile.js"></script>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="auth.js"></script>
@@ -48,68 +49,49 @@
       <h1>POSTS PAGE</h1>
     </header> -->
 
-    <header class="container-fluid d-flex justify-content-between bg-body-tertiary text-light py-4 border">
-      <div class="logo">
-        <svg id="logo-57" width="80" height="80" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="stroke" d="M36.95 4.31006H13.05L1.09998 25.0001L13.05 45.6901H36.95L48.9 25.0001L36.95 4.31006Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M36.99 6.15991H15.23L4.34998 24.9999L15.23 43.8399H36.99L47.87 24.9999L36.99 6.15991Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.03 8.01001H17.41L7.59998 25L17.41 41.99H37.03L46.84 25L37.03 8.01001Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.07 9.86011H19.59L10.85 25.0001L19.59 40.1401H37.07L45.81 25.0001L37.07 9.86011Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.12 11.71H21.77L14.1 25L21.77 38.29H37.12L44.79 25L37.12 11.71Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.16 13.5601H23.95L17.35 25.0001L23.95 36.4401H37.16L43.76 25.0001L37.16 13.5601Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.2 15.4199H26.13L20.6 24.9999L26.13 34.5799H37.2L42.73 24.9999L37.2 15.4199Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.24 17.27H28.31L23.85 25L28.31 32.73H37.24L41.7 25L37.24 17.27Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.28 19.1201H30.49L27.1 25.0001L30.49 30.8801H37.28L40.68 25.0001L37.28 19.1201Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path><path class="stroke" d="M37.33 20.97H32.67L30.35 25L32.67 29.03H37.33L39.65 25L37.33 20.97Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path></svg>
-      <span class="logo__text">Logo Ipsum</span>
-      </div>
-      <!-- <svg
-        id="logo-16"
-        class=""
-        width="109"
-        height="43"
-        viewBox="0 0 109 43"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M64.9315 11.4284C62.1883 8.6852 58.9316 6.5091 55.3475 5.0245C51.7633 3.5399 47.9219 2.7758 44.0424 2.7758C40.1629 2.7758 36.3215 3.5399 32.7373 5.0245C29.1532 6.5091 25.8965 8.6852 23.1533 11.4284L44.0424 32.3174L64.9315 11.4284Z"
-          class="ccompli1"
-          fill="#FFD200"
-        ></path>
-        <path
-          d="M44.0686 32.3475C46.8118 35.0907 50.0684 37.2667 53.6526 38.7513C57.2367 40.2359 61.0782 41 64.9577 41C68.837 41 72.679 40.2359 76.263 38.7513C79.847 37.2667 83.104 35.0907 85.847 32.3475L64.9577 11.4584L44.0686 32.3475Z"
-          class="ccompli2"
-          fill="#06E07F"
-        ></path>
-        <path
-          d="M44.017 32.3429C41.2738 35.0861 38.0171 37.2621 34.433 38.7467C30.8488 40.2313 27.0074 40.9954 23.1279 40.9954C19.2484 40.9954 15.407 40.2313 11.8228 38.7467C8.2387 37.2621 4.982 35.0861 2.2388 32.3429L23.1279 11.4538L44.017 32.3429Z"
-          class="ccustom"
-          fill="#E3073C"
-        ></path>
-        <path
-          d="M64.9831 11.433C67.726 8.6898 70.983 6.5138 74.567 5.0292C78.151 3.5446 81.993 2.7805 85.872 2.7805C89.752 2.7805 93.593 3.5446 97.177 5.0292C100.761 6.5138 104.018 8.6898 106.761 11.433L85.872 32.3221L64.9831 11.433Z"
-          class="ccustom"
-          fill="#1F84EF"
-        ></path>
-      </svg> -->
-
-      <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark ticky-top bg-body-tertiary rounded-5" data-bs-theme="dark">
-      <div class="container">
-          <!-- <a class="navbar-brand fw-light" href="/"><span class="fas fa-brain me-1"> </span>Ideas</a> -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-              <ul class="navbar-nav">
-                  <!-- <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/login">Login</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/register">Register</a>
-                  </li> -->
-                  <li class="nav-item">
-                      <a id="profileTitle" class="nav-link" href="#" >Profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <button class="btn btn-danger rounded-5" onclick="logout()">Logout</button>
-                </li>
-              </ul>
+    <header class="container-fluid bg-body-tertiary text-light py-4 border">
+      <div class="d-flex justify-content-between align-items-center">
+          <div class="logo d-flex align-items-center">
+              <svg id="logo-57" width="80" height="80" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="stroke" d="M36.95 4.31006H13.05L1.09998 25.0001L13.05 45.6901H36.95L48.9 25.0001L36.95 4.31006Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                  <path class="stroke" d="M36.99 6.15991H15.23L4.34998 24.9999L15.23 43.8399H36.99L47.87 24.9999L36.99 6.15991Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                  <path class="stroke" d="M37.03 8.01001H17.41L7.59998 25L17.41 41.99H37.03L46.84 25L37.03 8.01001Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                  <path class="stroke" d="M37.07 9.86011H19.59L10.85 25.0001L19.59 40.1401H37.07L45.81 25.0001L37.07 9.86011Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                  <path class="stroke" d="M37.12 11.71H21.77L14.1 25L21.77 38.29H37.12L44.79 25L37.12 11.71Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                  <path class="stroke" d="M37.16 13.5601H23.95L17.35 25.0001L23.95 36.4401H37.16L43.76 25.0001L37.16 13.5601Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                  <path class="stroke" d="M37.2 15.4199H26.13L20.6 24.9999L26.13 34.5799H37.2L42.73 24.9999L37.2 15.4199Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                  <path class="stroke" d="M37.24 17.27H28.31L23.85 25L28.31 32.73H37.24L41.7 25L37.24 17.27Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                  <path class="stroke" d="M37.28 19.1201H30.49L27.1 25.0001L30.49 30.8801H37.28L40.68 25.0001L37.28 19.1201Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                  <path class="stroke" d="M37.33 20.97H32.67L30.35 25L32.67 29.03H37.33L39.65 25L37.33 20.97Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+              </svg>
+              <span class="logo__text ms-2">Logo Ipsum</span>
           </div>
+          <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark sticky-top rounded-5" data-bs-theme="dark">
+              <div class="container">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                      <ul class="navbar-nav">
+                          <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="/register">Register</a>
+                          </li>
+                          <li class="nav-item d-flex align-items-center">
+                              <img id="proPic" src="" alt="" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                              <a id="profileTitle" class="nav-link" href="#">Profile</a>
+                          </li>
+                          <li class="nav-item">
+                              <button class="btn btn-danger rounded-5" onclick="logout()">Logout</button>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
       </div>
-  </nav>
-    </header> 
+  </header>
 
     <!-- <header></header> -->
 
@@ -125,7 +107,7 @@
         </div>
       </section> -->
 
-      <div class="col-3 mt-3">
+      <div class="col-3 mt-0">
         <div class="card mt-3">
             <div class="card-header pb-0 border-0">
                 <h5 class="">Trends for You</h5>
@@ -241,8 +223,8 @@
                                 src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt=""></a>
                     </div>
                     <div class="overflow-hidden">
-                        <a class="h6 mb-0" href="#!">Mario Brother</a>
-                        <p class="mb-0 small text-truncate">@Mario</p>
+                        <a id="personAccount" class="h6 mb-0" href="#!"></a>
+                        <p id="trendName" class="mb-0 small text-truncate"></p>
                     </div>
                     <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
                             class="fa-solid fa-plus"> </i></a>

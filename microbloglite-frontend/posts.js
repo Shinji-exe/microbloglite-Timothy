@@ -7,14 +7,21 @@ let tweetInput = document.getElementById("tweetInput");
 let tweetButton = document.getElementById("tweetButton");
 let charCount = document.getElementById("charCount");
 let theUsername = document.getElementById("theUsername");
+let personAccount = document.getElementById("personAccount");
 
 //
+
+// document.querySelector(".dropdown-toggle").addEventListener("click", function(){
+//   const dropdown = document.querySelector(".custom-dropdown")
+//   dropdown.classList.toggle("open")
+// })
 
 let profileTitle = document.getElementById("profileTitle");
 // let profileName = localStorage.getItem("username");
 let loginData = getLoginData();
 if (loginData) {
   profileTitle.innerText = `${loginData.username}`;
+  profileTitle.href = `userProfile.html?username=${loginData.username}`;
 } else {
   profileTitle.innerText = "Guest";
 }
@@ -95,6 +102,9 @@ async function getAllUsers(params) {
     let response = await promise;
     let data = await response.json();
     console.log(data);
+    personAccount.innerText = data[0]?.username;
+    personAccount.href = `userProfile.html?username=${data.username}`;
+    followPerson(data);
   } catch (error) {
     console.error;
   }
@@ -103,6 +113,15 @@ async function getAllUsers(params) {
 getAllUsers();
 
 getAllPost();
+
+function followPerson(users) {
+  for (let i = 0; i < users.length; i++) {
+    let username = document.createElement("a");
+    username.href = `userProfile.html?username=${users.username}`;
+    username.innerText = users.username;
+    personAccount.appendChild(username);
+  }
+}
 
 // async function getAPost(posts) {
 //   const loginData = getLoginData();
@@ -220,6 +239,8 @@ function createPostCards(posts) {
     timeOfCreation.className = "ps-3";
     timeOfCreation.innerText = new Date(post.createdAt).toLocaleString();
 
+    profileTitle.href = `userProfile.html?username=${post.username}`;
+
     usernameAndPic.appendChild(postAvatar);
     usernameAndPic.appendChild(userNameLink);
     usernameAndPic.appendChild(timeOfCreation);
@@ -242,7 +263,7 @@ function createPostCards(posts) {
     headerSpecial.className = "post__headerSpecial";
 
     let options = document.createElement("div");
-    options.className = "container mt-3 d-flex justify-content-around";
+    options.className = "container mt-3 d-flex justify-content-around border-top";
 
     let likeButton = document.createElement("button");
     likeButton.innerHTML = '<i class="bi bi-hand-thumbs-up"></i>';
@@ -264,7 +285,7 @@ function createPostCards(posts) {
         let response = await promise;
         let data = await response.json();
         console.log(data);
-        location.reload(true)
+        location.reload(true);
       } catch (error) {
         console.error;
       }
@@ -274,6 +295,10 @@ function createPostCards(posts) {
     let likeCounter = document.createElement("span");
     likeCounter.innerText = post.likes.length;
     likeCounter.className = "ps-2";
+
+    if (post.likes.length > 0) {
+      likeButton.style.color = "#1a91da";
+    }
 
     likeButton.appendChild(likeCounter);
 
@@ -300,8 +325,6 @@ function createPostCards(posts) {
     let upload = document.createElement("button");
     upload.innerHTML = `<i class="bi bi-upload"></i>`;
     upload.className = "btn";
-
-    let horizzontal = document.createElement("hr");
 
     options.appendChild(likeButton);
     options.appendChild(comment);

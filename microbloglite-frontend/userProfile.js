@@ -1,5 +1,20 @@
 "use strict";
 
+let profileTitle = document.getElementById("profileTitle");
+let postCardArea = document.getElementById("postCardArea");
+let theUsername = document.getElementById("theUsername");
+let biography = document.getElementById("biography");
+let pfp = document.querySelector("#pfp");
+let proPic = document.getElementById("proPic");
+// let profileName = localStorage.getItem("username");
+let loginData = getLoginData();
+if (loginData) {
+  profileTitle.innerText = `${loginData.username}`;
+  // theUsername.innerText = `${loginData.username}`
+} else {
+  profileTitle.innerText = "Guest";
+}
+
 const urlParams = new URLSearchParams(location.search);
 
 let userProfile = urlParams.get("username");
@@ -17,6 +32,10 @@ async function getProfile() {
     let response = await promise;
     let data = await response.json();
     console.log(data);
+    theUsername.innerText = data.username || "Loading...";
+    biography.innerText = data.bio;
+    proPic.src = data.profilePicture || "images/l60Hf.png"
+    proPic.className = "proPic"
     // createPostCards(data);
   } catch (error) {
     console.error;
@@ -24,6 +43,29 @@ async function getProfile() {
 }
 
 getProfile();
+
+// async function getUsersPost() {
+//   const loginData = getLoginData();
+//   try {
+//     let promise = fetch(`http://localhost:5005/api/posts/${username}`, {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${loginData.token}`,
+//       },
+//     });
+//     let response = await promise;
+//     let data = await response.json();
+//     console.log(data);
+//     theUsername.innerText = `${data.username}` || "Loading...";
+
+//     if (data.username === postCardArea.username) createPostCards(data);
+//   } catch (error) {
+//     console.error;
+//   }
+// }
+
+// getUsersPost();
 
 function createPostCards(posts) {
   let card = document.createElement("div");

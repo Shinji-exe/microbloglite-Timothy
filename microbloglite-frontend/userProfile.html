@@ -1,17 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- <link rel="stylesheet" href="Lux.css" /> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- Global CSS (CSS rules you want applied to all pages) -->
+    <link rel="stylesheet" href="global.css" />
+
     <script defer src="./userProfile.js"></script>
     <script src="auth.js"></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- <header class="container-fluid d-flex justify-content-between bg-body-tertiary text-light py-4 border">
+      <div class="logo">
+        
+        <svg id="logo-57" width="80" height="80" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            class="stroke"
+            d="M36.95 4.31006H13.05L1.09998 25.0001L13.05 45.6901H36.95L48.9 25.0001L36.95 4.31006Z"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-miterlimit="10"
+          ></path>
+          <path
+            class="stroke"
+            d="M36.99 6.15991H15.23L4.34998 24.9999L15.23 43.8399H36.99L47.87 24.9999L36.99 6.15991Z"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-miterlimit="10"
+          ></path>
+          <path
+            class="stroke"
+            d="M37.03 8.01001H17.41L7.59998 25L17.41 41.99H37.03L46.84 25L37.03 8.01001Z"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-miterlimit="10"
+          ></path>
+          <path
+            class="stroke"
+            d="M37.07 9.86011H19.59L10.85 25.0001L19.59 40.1401H37.07L45.81 25.0001L37.07 9.86011Z"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-miterlimit="10"
+          ></path>
+          <path
+            class="stroke"
+            d="M37.12 11.71H21.77L14.1 25L21.77 38.29H37.12L44.79 25L37.12 11.71Z"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-miterlimit="10"
+          ></path>
+          <path
+            class="stroke"
+            d="M37.16 13.5601H23.95L17.35 25.0001L23.95 36.4401H37.16L43.76 25.0001L37.16 13.5601Z"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-miterlimit="10"
+          ></path>
+          <path
+            class="stroke"
+            d="M37.2 15.4199H26.13L20.6 24.9999L26.13 34.5799H37.2L42.73 24.9999L37.2 15.4199Z"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-miterlimit="10"
+          ></path>
+          <path
+            class="stroke"
+            d="M37.24 17.27H28.31L23.85 25L28.31 32.73H37.24L41.7 25L37.24 17.27Z"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-miterlimit="10"
+          ></path>
+          <path
+            class="stroke"
+            d="M37.28 19.1201H30.49L27.1 25.0001L30.49 30.8801H37.28L40.68 25.0001L37.28 19.1201Z"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-miterlimit="10"
+          ></path>
+          <path
+            class="stroke"
+            d="M37.33 20.97H32.67L30.35 25L32.67 29.03H37.33L39.65 25L37.33 20.97Z"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-miterlimit="10"
+          ></path>
+        </svg>
+        <span class="logo__text">Logo Ipsum</span>
+      </div>
+
+      <nav
+        class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark ticky-top bg-body-tertiary rounded-5 align-items-center"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+     
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item d-flex align-items-center">
+                <img id="proPic" src="" alt="">
+                <a id="profileTitle" class="nav-link" href="">Profile</a>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-danger rounded-5" onclick="logout()">Logout</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header> -->
+
+    <header class="container-fluid bg-body-tertiary text-light py-4 border">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="logo d-flex align-items-center">
+                <svg id="logo-57" width="80" height="80" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="stroke" d="M36.95 4.31006H13.05L1.09998 25.0001L13.05 45.6901H36.95L48.9 25.0001L36.95 4.31006Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                    <path class="stroke" d="M36.99 6.15991H15.23L4.34998 24.9999L15.23 43.8399H36.99L47.87 24.9999L36.99 6.15991Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                    <path class="stroke" d="M37.03 8.01001H17.41L7.59998 25L17.41 41.99H37.03L46.84 25L37.03 8.01001Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                    <path class="stroke" d="M37.07 9.86011H19.59L10.85 25.0001L19.59 40.1401H37.07L45.81 25.0001L37.07 9.86011Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                    <path class="stroke" d="M37.12 11.71H21.77L14.1 25L21.77 38.29H37.12L44.79 25L37.12 11.71Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                    <path class="stroke" d="M37.16 13.5601H23.95L17.35 25.0001L23.95 36.4401H37.16L43.76 25.0001L37.16 13.5601Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                    <path class="stroke" d="M37.2 15.4199H26.13L20.6 24.9999L26.13 34.5799H37.2L42.73 24.9999L37.2 15.4199Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                    <path class="stroke" d="M37.24 17.27H28.31L23.85 25L28.31 32.73H37.24L41.7 25L37.24 17.27Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                    <path class="stroke" d="M37.28 19.1201H30.49L27.1 25.0001L30.49 30.8801H37.28L40.68 25.0001L37.28 19.1201Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                    <path class="stroke" d="M37.33 20.97H32.67L30.35 25L32.67 29.03H37.33L39.65 25L37.33 20.97Z" stroke="black" stroke-width="0.5" stroke-miterlimit="10"></path>
+                </svg>
+                <span class="logo__text ms-2">Logo Ipsum</span>
+            </div>
+            <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark sticky-top rounded-5 align-items-center" data-bs-theme="dark">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <!-- <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/register">Register</a>
+                            </li> -->
+                            <li class="nav-item d-flex align-items-center">
+                                <img id="proPic" src="" alt="" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                                <a id="profileTitle" class="nav-link" href="#">Profile</a>
+                            </li>
+                            <div class="custom-dropdown">
+                              <button class="dropdown-toggle">
+                                <i class="bi bi-gear-fill"></i> Settings
+                              </button>
+                              <div class="dropdown-menu">
+                                <button onclick="alert('Option 1 clicked')">Option 1</button>
+                                <button onclick="alert('Option 2 clicked')">Option 2</button>
+                                <button onclick="alert('Option 3 clicked')">Option 3</button>
+                              </div>
+                            </div>
+                            <li class="nav-item">
+                                <button class="btn btn-danger rounded-5 ms-2" onclick="logout()">Logout</button>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
     
-    <header></header>
     <main>
-        <section id="postCardArea"></section>
+      <div class="banner"></div>
+      <section id="userInformation" class="d-flex align-items-center">
+        <div id="profilePic" class="card">
+          <img id="pfp" class="ms-3" src="./images/shinji.jpeg" alt="" />
+          <div>
+            <h3 id="theUsername">placeholder</h3>
+           
+                <p id="biography" class=""></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div id="profilePic" class="card">
+          <img id="pfp" class="ms-3" src="./images/shinji.jpeg" alt="" />
+          <div>
+            <h3 id="theUsername">placeholder</h3>
+          </div>
+        </div>
+        <div id="profilePic" class="card">
+          <img id="pfp" class="ms-3" src="./images/shinji.jpeg" alt="" />
+          <div>
+            <h3 id="theUsername">placeholder</h3>
+          </div>
+        </div> -->
+      </section>
+
+      <div id="postCardArea" class="container my-4"></div>
     </main>
-</body>
+  </body>
 </html>
