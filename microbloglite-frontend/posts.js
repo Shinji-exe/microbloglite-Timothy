@@ -8,7 +8,10 @@ let tweetButton = document.getElementById("tweetButton");
 let charCount = document.getElementById("charCount");
 let theUsername = document.getElementById("theUsername");
 let personAccount = document.getElementById("personAccount");
-
+let proPic = document.getElementById("proPic");
+let trendName = document.getElementById("trendName");
+let avatar = document.getElementById("avatar-img");
+let over = document.querySelector(".overflow-hidden")
 //
 
 // document.querySelector(".dropdown-toggle").addEventListener("click", function(){
@@ -83,6 +86,8 @@ async function getAllPost() {
     let response = await promise;
     let data = await response.json();
     console.log(data);
+    proPic.src = data.profilePicture || "images/l60Hf.png";
+    proPic.className = "proPic";
     createPostCards(data);
   } catch (error) {
     console.error;
@@ -102,7 +107,7 @@ async function getAllUsers(params) {
     let response = await promise;
     let data = await response.json();
     console.log(data);
-    personAccount.innerText = data[0]?.username;
+    personAccount.innerText = data?.username;
     personAccount.href = `userProfile.html?username=${data.username}`;
     followPerson(data);
   } catch (error) {
@@ -115,12 +120,17 @@ getAllUsers();
 getAllPost();
 
 function followPerson(users) {
-  for (let i = 0; i < users.length; i++) {
-    let username = document.createElement("a");
-    username.href = `userProfile.html?username=${users.username}`;
-    username.innerText = users.username;
+  users.forEach((user) => {
+    let username = personAccount;
+    let fullname = trendName;
+    username.href = `userProfile.html?username=${user.username}`;
+    username.innerText = user.username;
+    fullname.innerText = `@${user.fullName}`;
+    avatar.src = user.image || "images/l60Hf.png";
+    personAccount.appendChild(avatar);
     personAccount.appendChild(username);
-  }
+    over.appendChild(personAccount)
+  });
 }
 
 // async function getAPost(posts) {
@@ -166,51 +176,7 @@ async function createAPost() {
 
 function createPostCards(posts) {
   posts.forEach((post) => {
-    // let card = document.createElement("div");
-    // card.className = "card my-3 w-100";
-
-    // let cardHeader = document.createElement("div");
-    // cardHeader.className = "";
-    // card.appendChild(cardHeader);
-
-    // let cardHeaderProfileName = document.createElement("a");
-    // // cardHeaderProfileName.href = `postDetail.html?id=${post._id}`;
-    // // cardHeaderProfileName.href = `userProfile.html?_id=${post.username}`;
-    // cardHeaderProfileName.href = `postDetail.html?_id=${post._id}`;
-    // cardHeaderProfileName.innerText = post.username || "Unknown User";
-    // cardHeader.appendChild(cardHeaderProfileName);
-
-    // let imagePost = document.createElement("img");
-    // imagePost.src = post.imagePost || "";
-    // card.appendChild(imagePost);
-
-    // let cardBody = document.createElement("div");
-    // let cardText = document.createElement("p");
-    // cardText.innerText = post.text;
-    // cardText.className = "px-3";
-    // cardBody.appendChild(cardText);
-    // card.appendChild(cardBody);
-
-    // let likeButton = document.createElement("button");
-    // likeButton.innerText = "Like";
-    // likeButton.addEventListener("click", async (post) => {
-    //   let promise = fetch("http://localhost:5005/api/likes" + post._id);
-    // });
-
-    // // if(){
-
-    // // }
-
-    // let cardFooter = document.createElement("div");
-    // cardFooter.className = "";
-    // let cardFooterText = document.createElement("p");
-    // cardFooterText.innerText = new Date(post.createdAt).toLocaleString();
-    // cardBody.appendChild(likeButton);
-    // cardFooter.appendChild(cardFooterText);
-    // card.appendChild(cardFooter);
-
-    // postCardArea.appendChild(card);
-
+    
     let feed = document.createElement("div");
     feed.className = "feed";
 
