@@ -61,6 +61,11 @@ async function makeProfile(event) {
     let response = await promise;
     let data = await response.json();
     console.log(data);
+    if(response.ok){
+      window.location.href = "index.html";
+    }else{
+      console.warn("Not posting")
+    }
   } catch (error) {
     console.error("Error code", error.message);
   }
