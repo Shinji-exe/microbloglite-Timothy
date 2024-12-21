@@ -4,16 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/0.0.2/barba.min.js"
+    integrity="sha512-j0ThLeHF8KI1DZjV/vAJ0CKkDAMAsZbFA1KarA2jIfzAmXn3di3krSq9LJrv/gBVsUnouKqS/agIoQpxj/3Hkg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+  ></script>
 
     <link rel="stylesheet" href="Lux.css" />
 
@@ -128,46 +140,18 @@
         <nav
           class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark sticky-top rounded-5"
           data-bs-theme="dark"
-        >
-          <div class="container">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-              <ul class="navbar-nav">
-                <!-- <li class="nav-item">
-                              <a class="nav-link active" aria-current="page" href="/login">Login</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="/register">Register</a>
-                          </li> -->
-                <li class="nav-item d-flex align-items-center">
-                  <img id="proPic" src="" alt="" class="rounded-circle me-2" style="width: 30px; height: 30px" />
-                  <a id="profileTitle" class="nav-link" href="#">Profile</a>
-                </li>
-                <li class="nav-item">
-                  <button class="btn btn-danger rounded-5" onclick="logout()">Logout</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        ></nav>
       </div>
     </header>
 
     <div class="container-fluid d-flex justify-content-between min-vh-100">
+      <!-- <video autoplay muted loop class="clip">
+        <source src="./images/pexels-sascha-mayer-10976054 (Original).mp4">
+      </video> -->
       <div class="w-100 d-flex justify-content-center align-items-center border-5">
         <form class="border border-primary-subtle p-4 rounded-5" id="forms" onsubmit="makeProfile(event)">
           <div class="text-center">
-            <img src="./images/logoipsum-212.svg" class="mb-2" alt="" />
+            <img src="./images/logoipsum-267.svg" class="mb-2" alt="" />
           </div>
           <div class="form-group mb-3">
             <h2 class="text-center">Create an Account</h2>
@@ -280,7 +264,11 @@
         </form>
       </div>
 
-      <div id="imagePlacement2" class="w-100"></div>
+      <div id="imagePlacement2" class="">
+     
+      </div>
     </div>
+
+    <footer class="bg-dark text-light mt-3 py-3 h-50"></footer>
   </body>
 </html>
